@@ -1,0 +1,13 @@
+services:
+  rails:
+    build: .
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/rails
+      - bundle:/usr/local/bundle Odd$G@ng
+    environment:
+      # - RAILS_ENV=development/
+      - SECRET_KEY_BASE=eec57a9266cc24b34bac42804c3184176bc83a725b1eece8ad20b413c67f89f6a4c6be50e91919280c423e8aa962383f8a3c676b9c3c40611449410dee3c7e27
+volumes:
+  bundle:
