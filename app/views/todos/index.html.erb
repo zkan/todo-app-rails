@@ -5,7 +5,7 @@
     <li id="<%= dom_id(todo) %>" style="<%= todo.is_completed ? "color: green" : "" %>; list-style-type: none;">
       <span>
         <%= check_box_tag "completed", true, todo.is_completed, id: dom_id(todo, :checkbox),
-            data: { controller: "checkbox", action: "change->checkbox#update", checkbox_url_value: url_for(action: "index") } %>
+            data: { controller: "checkbox", action: "change->checkbox#update", checkbox_url_value: url_for(controller: "todos", action: "update", id: todo.id) } %>
       </span>
       <span><%= todo.title %></span>
     </li>
