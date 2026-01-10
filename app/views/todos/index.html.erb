@@ -2,6 +2,9 @@
 
 <ul>
   <% @todos.each do |todo| %>
-    <li><%= check_box_tag "completed", true, todo.is_completed, data: { controller: "checkbox", action: "change->checkbox#update" } %> <%= todo.title %></li>
+    <li>
+      <span><%= check_box_tag "completed", true, todo.is_completed, data: { controller: "checkbox", action: "change->checkbox#update", checkbox_url_value: url_for(action: "index") } %></span>
+        <span><%= todo.title %></span>
+    </li>
   <% end %>
 </ul>
