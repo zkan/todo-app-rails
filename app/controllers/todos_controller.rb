@@ -13,9 +13,19 @@ class TodosController < ApplicationController
     end
   end
 
+  def new
+    @todo = Todo.new
+  end
+
+  def create
+    todo = Todo.create(todo_params)
+
+    redirect_to todos_index_path
+  end
+
   private
 
     def todo_params
-      params.expect(todo: [ :is_completed ])
+      params.expect(todo: [ :title, :is_completed ])
     end
 end
