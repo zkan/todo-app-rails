@@ -15,7 +15,7 @@ class TodosController < ApplicationController
 
   private
 
-  def todo_params
-    params.expect(todo: [ :is_completed ])
-  end
+    def todo_params
+      params.expect(todo: [ :is_completed ])
+    end
 end
