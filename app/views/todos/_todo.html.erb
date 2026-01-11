@@ -1,7 +1,6 @@
-  <li id="<%= dom_id(todo) %>" style="<%= todo.is_completed ? "color: green" : "" %>; list-style-type: none;">
-    <span>
-      <%= check_box_tag "completed", true, todo.is_completed, id: dom_id(todo, :checkbox),
-          data: { controller: "checkbox", action: "change->checkbox#update", checkbox_url_value: url_for(controller: "todos", action: "update", id: todo.id) } %>
-    </span>
+  <div class="p-2 rounded-lg <%= todo.is_completed ? "bg-green-500" : "bg-gray-200" %> flex items-center" id="<%= dom_id(todo) %>">
+    <%= check_box_tag "completed", true, todo.is_completed, id: dom_id(todo, :checkbox),
+        class: "mr-2 w-5 h-5",
+        data: { controller: "checkbox", action: "change->checkbox#update", checkbox_url_value: url_for(controller: "todos", action: "update", id: todo.id) } %>
     <span><%= todo.title %></span>
-  </li>
+  </div>
