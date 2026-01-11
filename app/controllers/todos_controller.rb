@@ -8,7 +8,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       if @todo.update(todo_params)
-        format.turbo_stream {}
+        format.turbo_stream { }
       end
     end
   end
