@@ -4,5 +4,8 @@ ruby = "4.0.0"
 [tasks.migrate]
 run = "./bin/rails db:migrate"
 
+[tasks.test]
+run = "./bin/rails test"
+
 [tasks.ci]
 run = "./bin/ci"
