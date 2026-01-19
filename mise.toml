@@ -1,2 +1,8 @@
 [tools]
 ruby = "4.0.0"
+
+[tasks.migrate]
+run = "./bin/rails db:migrate"
+
+[tasks.ci]
+run = "./bin/ci"
