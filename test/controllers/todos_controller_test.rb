@@ -6,6 +6,11 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should have new todo button" do
+    get todos_index_url
+    assert_select "a", "New To-Do"
+  end
+
   test "renders a todo" do
     todo = Todo.create! title: "Run 10 km"
 
